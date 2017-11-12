@@ -12,7 +12,7 @@
     "fe",
     "architecture"
   ],
-  "author": "slashhuang",
+  "author": "mhyuan",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
