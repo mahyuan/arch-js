@@ -4,29 +4,27 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    context: path.resolve(process.cwd(), "src/app"),    
+    context: path.resolve(process.cwd(), "src"),    
     entry: entry,
-    watch: true,
     output: {
+        publicPath: '/dist',
         path: path.resolve(process.cwd(), "dist"),
         filename: "[name].js",
     },
     plugins: [
         new ExtractTextPlugin("css/[name].css"),
         new HtmlWebpackPlugin({
-            title: 'sale',
-            template: path.resolve(
-                process.cwd(),
-                'src/base/webpack.template.html'
-            ),
-            filename: 'sale.html',
-            chunks: ['sale'],
+            template: 'base/webpack.template.html',
+            inject: true
         }),
     ],
+    resolve: {
+        extensions: [".js", ".jsx", ".json"],  
+    },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 loader: 'babel-loader',
             }, 
             {
@@ -59,9 +57,4 @@ module.exports = {
             },
         ]
     },
-
-
-
-
-
 }

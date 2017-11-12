@@ -2,6 +2,14 @@
 
 a boilerplate for fe architecture
 
+# command
+
+### dev
+```bash
+    npm run dev
+    open localhost:9000
+```
+
 # main functionalities
 
 - npm scripts [dev product deploy]
@@ -16,13 +24,14 @@ a boilerplate for fe architecture
 
 # file structure
 
+```bash
 |- src
 |- |- app
 |- |- components
 |- |- global
 |- |- |- reset.css
+```
 
 # links
 
 [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
-
